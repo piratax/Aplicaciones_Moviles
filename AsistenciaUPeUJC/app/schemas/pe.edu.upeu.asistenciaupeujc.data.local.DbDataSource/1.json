@@ -1,0 +1,118 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "18f74fd780b9a013e82e94e44c4c4c9f",
+    "entities": [
+      {
+        "tableName": "actividad",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nombreActividad` TEXT NOT NULL, `fecha` TEXT NOT NULL, `horai` TEXT NOT NULL, `minToler` TEXT NOT NULL, `latitud` TEXT NOT NULL, `longitud` TEXT NOT NULL, `estado` TEXT NOT NULL, `evaluar` TEXT NOT NULL, `userCreate` TEXT NOT NULL, `mater` TEXT NOT NULL, `validInsc` TEXT NOT NULL, `asisSubact` TEXT NOT NULL, `entsal` TEXT NOT NULL, `offlinex` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nombreActividad",
+            "columnName": "nombreActividad",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fecha",
+            "columnName": "fecha",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "horai",
+            "columnName": "horai",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "minToler",
+            "columnName": "minToler",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitud",
+            "columnName": "latitud",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitud",
+            "columnName": "longitud",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estado",
+            "columnName": "estado",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "evaluar",
+            "columnName": "evaluar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userCreate",
+            "columnName": "userCreate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mater",
+            "columnName": "mater",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "validInsc",
+            "columnName": "validInsc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "asisSubact",
+            "columnName": "asisSubact",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "entsal",
+            "columnName": "entsal",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "offlinex",
+            "columnName": "offlinex",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '18f74fd780b9a013e82e94e44c4c4c9f')"
+    ]
+  }
+}
