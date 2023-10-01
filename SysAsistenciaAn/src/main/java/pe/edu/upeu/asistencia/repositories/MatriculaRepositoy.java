@@ -6,13 +6,13 @@ package pe.edu.upeu.asistencia.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pe.edu.upeu.asistencia.models.Inscrito;
+import pe.edu.upeu.asistencia.models.Matricula;
 
 /**
  *
  * @author DELL
  */
 @Repository
-public interface InscritoRepository extends JpaRepository<Inscrito, Long>{
+public interface  MatriculaRepository extends JpaRepository<Matricula, Long>{
     
 }

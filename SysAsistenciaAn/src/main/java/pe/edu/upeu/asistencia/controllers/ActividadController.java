@@ -4,10 +4,11 @@
  */
 package pe.edu.upeu.asistencia.controllers;
 
+import com.google.gson.Gson;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -63,8 +64,8 @@ public class ActividadController {
     }
     
     @PutMapping("/editar/{id}")
-    public ResponseEntity<Actividad> updateActividad(@PathVariable Long id, @RequestBody Actividad actividadDetails) {
+    public ResponseEntity<Actividad> updateActividad(@PathVariable Long id, @RequestBody Actividad actividadDetails) {        
         Actividad updatedActividad = actividadService.update(actividadDetails, id);
         return ResponseEntity.ok(updatedActividad);
-    }
+    }      
 }

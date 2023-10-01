@@ -6,21 +6,20 @@ package pe.edu.upeu.asistencia.services;
 
 import java.util.List;
 import java.util.Map;
-import pe.edu.upeu.asistencia.models.Inscrito;
+import pe.edu.upeu.asistencia.models.;
 
 /**
  *
- * @author DELL
+ * @author MeMatricula
  */
-public interface InscritoService {
+public interface MatriculaService {
+    Matricula save(Matricula entidad);
 
-    Inscrito save(Inscrito activiad);
-
-    List<Inscrito> findAll();
+    List<Matricula> findAll();
 
     Map<String, Boolean> delete(Long id);
 
-    Inscrito getEntidadById(Long id);
+    Matricula geEntidadById(Long id);
 
-    Inscrito update(Inscrito activiad, Long id);
+    Matricula update(Matricula entidad, Long id); 
 }

@@ -4,9 +4,7 @@
  */
 package pe.edu.upeu.asistencia.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,10 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.Size;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,36 +26,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "asis_materialesx")
-public class Materialesx {
+@Table(name = "asis_inscritos")
+public class Inscrito {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Size(max = 20)
-    @Column(name = "cui",length = 20,nullable = false)
+    @Column(name="cui",length = 20,nullable = false)
     private String cui;  
     @Size(max = 20)
-    @Column(name = "tipo_cui",length = 20,nullable = false)
-    private String tipoCui; 
-    @Column(name = "mater_entre", nullable = true, length = 200)
-    private String materEntre;  
-    @JsonFormat(pattern = "yyyy-MM-dd")    
-    @Basic(optional = false)
-    @Column(name = "fecha", nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date fecha;    
-    @Basic(optional = false)    
-    @Column(name = "hora_reg", nullable = false)
-    @Temporal(TemporalType.TIME)
-    private Date horaReg;    
-    @Size(max = 60)
-    private String latituda;
-    @Size(max = 60)
-    private String longituda;  
-    @Basic(optional = false)
-    @Column(name = "mod_fh", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date modFh;     
+    @Column(name="tipo_cui",length = 20,nullable = false)
+    private String tipoCui;
+    @Size(max = 100)
+    @Column(name="evidens_pay",length = 100,nullable = false)
+    private String evidensPay;
     @Size(max = 2)
     @Column(name="offlinex",length = 2,nullable = false)
     private String offlinex;  
@@ -68,5 +48,7 @@ public class Materialesx {
     @JoinColumn(name = "actividad_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     @JsonIgnoreProperties({"asistenciaxs", "inscritos", "subactasisxs", "materialesxs"})
-    private Actividad actividadId;     
+    private Actividad actividadId;  
+    
+   
 }
